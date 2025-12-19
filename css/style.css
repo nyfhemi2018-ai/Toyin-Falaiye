@@ -1,4 +1,31 @@
 /********** Template CSS **********/
+:root {
+    --bs-primary: #ffc107; /* Yellow (Bootstrap-style gold) */
+}
+/* FORCE PRIMARY COLOR TO YELLOW EVERYWHERE */
+.text-primary,
+.btn-primary,
+.btn-outline-primary,
+.border-primary,
+.bg-primary,
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+    color: #ffc107 !important;
+    border-color: #ffc107 !important;
+    background-color: transparent;
+}
+
+.btn-primary,
+.bg-primary {
+    background-color: #ffc107 !important;
+    border-color: #ffc107 !important;
+    color: #000 !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: #ffc107 !important;
+    color: #000 !important;
+}
 
 /* Back to Top */
 .back-to-top {
