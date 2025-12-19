@@ -1,5 +1,6 @@
 /********** Template CSS **********/
 
+/* Back to Top */
 .back-to-top {
     position: fixed;
     display: none;
@@ -8,23 +9,21 @@
     z-index: 99;
 }
 
-
 /*** Spinner ***/
 #spinner {
     opacity: 0;
     visibility: hidden;
-    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
     z-index: 99999;
 }
 
 #spinner.show {
-    transition: opacity .5s ease-out, visibility 0s linear 0s;
     visibility: visible;
     opacity: 1;
+    transition: opacity 0.5s ease-out;
 }
 
-
-/*** Button ***/
+/*** Buttons ***/
 .btn {
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -32,6 +31,13 @@
     border-radius: 6px;
 }
 
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-square {
@@ -49,20 +55,9 @@
     height: 48px;
 }
 
-.btn-square,
-.btn-sm-square,
-.btn-lg-square {
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: inherit;
-}
-
 .btn-primary {
-    color: var(--bs-white);
+    color: #ffffff;
 }
-
 
 /*** Navbar ***/
 .navbar {
@@ -77,21 +72,16 @@
 .navbar.scrolled {
     position: fixed;
     background-color: rgba(0, 0, 0, 0.95);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-}
-
-..navbar .navbar-nav .nav-link {
+.navbar .navbar-nav .nav-link {
     margin-right: 20px;
     padding: 28px 0;
-    color: var(--bs-white);
+    color: #ffffff;
     font-size: 15px;
     font-weight: 500;
-    text-transform: none;
     letter-spacing: 0.5px;
-}
-
 }
 
 .navbar .navbar-nav .nav-link:hover,
@@ -100,56 +90,25 @@
 }
 
 @media (max-width: 991.98px) {
-    .navbar .navbar-nav .nav-link,
-    .navbar.bg-dark .navbar-nav .nav-link {
+    .navbar .navbar-nav {
+        margin-top: 8px;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .navbar .navbar-nav .nav-link {
         margin-right: 0;
         padding: 10px 0;
     }
-
-    .navbar .navbar-nav {
-        margin-top: 8px;
-        border-top: 1px solid var(--bs-light);
-    }
 }
 
-   }
-
-    .navbar .nav-item .dropdown-menu {
-        display: block;
-        border: none;
-        margin-top: 0;
-        top: 150%;
-        opacity: 0;
-        visibility: hidden;
-        transition: .5s;
-    }
-
-    .navbar .nav-item:hover .dropdown-menu {
-        top: 100%;
-        visibility: visible;
-        transition: .5s;
-        opacity: 1;
-    }
-}
-
-.navbar .dropdown-toggle::after {
-    border: none;
-    content: "\f107";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    vertical-align: middle;
-    margin-left: 8px;
-}
-
-
-/*** Header ***/
+/*** Header / Carousel ***/
 .carousel-caption {
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     padding-top: 100px;
-    background: rgba(0, 0, 0, .7);
+    background: rgba(0, 0, 0, 0.7);
     z-index: 1;
 }
 
@@ -169,7 +128,7 @@
         position: relative;
         min-height: 550px;
     }
-    
+
     #header-carousel .carousel-item img {
         position: absolute;
         width: 100%;
@@ -178,77 +137,37 @@
     }
 }
 
-.page-header {
-    padding-top: 200px;
-    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/carousel-1.jpg) top center no-repeat;
-    background-size: cover;
-}
-
-.page-header .breadcrumb-item + .breadcrumb-item::before {
-    color: var(--bs-white);
-}
-
-
-/*** Title ***/
+/*** Titles ***/
 .title {
     margin-bottom: 2rem;
 }
 
-.title .title-left,
-.title .title-center,
-.title .title-right {
+.title-left,
+.title-center,
+.title-right {
     display: inline-block;
     text-transform: uppercase;
-    overflow: hidden;
 }
 
-.title .title-center {
+.title-center {
     text-align: center;
 }
 
-.title .title-right {
-    text-align: right;
-}
-
-.title .title-left h5,
-.title .title-center h5,
-.title .title-right h5 {
-    position: relative;
-    display: inline-block;
+.title-left h5,
+.title-center h5,
+.title-right h5 {
     font-size: 18px;
     font-weight: 300;
+    position: relative;
 }
 
-.title .title-left h5::after,
-.title .title-center h5::before,
-.title .title-center h5::after,
-.title .title-right h5::before {
-    position: absolute;
-    content: "";
-    width: 500%;
-    height: 0;
-    top: 9px;
-    border-bottom: 1px solid var(--bs-white);
+.title-left h1,
+.title-center h1,
+.title-right h1 {
+    border-bottom: 1px solid #ffffff;
 }
 
-.title .title-left h5::after,
-.title .title-center h5::after {
-    left: calc(100% + 15px);
-}
-
-.title .title-right h5::before,
-.title .title-center h5::before {
-    right: calc(100% + 15px);
-}
-
-.title .title-left h1,
-.title .title-center h1,
-.title .title-right h1 {
-    border-bottom: 1px solid var(--bs-white);
-}
-
-
-/*** Service ***/
+/*** Services ***/
 .service-item {
     position: relative;
     margin-top: 2.5rem;
@@ -261,39 +180,35 @@
 }
 
 .service-item .service-img::before {
-    position: absolute;
     content: "";
+    position: absolute;
     width: calc(100% - 12rem);
     height: calc(100% - 12rem);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 3rem solid rgba(0, 0, 0, .5);
+    border: 3rem solid rgba(0, 0, 0, 0.5);
     border-radius: 300px;
-    z-index: 1;
 }
 
-.service-item.service-item-left {
+.service-item-left {
     border-radius: 500px 0 0 500px;
     background: linear-gradient(to right, var(--bs-secondary), var(--bs-dark));
 }
 
-.service-item.service-item-right {
+.service-item-right {
     border-radius: 0 500px 500px 0;
     background: linear-gradient(to left, var(--bs-secondary), var(--bs-dark));
 }
 
 @media (max-width: 767.98px) {
     .service-item {
-    border-radius: 12px;
-    background: var(--bs-dark);
-}
-
+        border-radius: 12px;
+        background: var(--bs-dark);
     }
 }
 
-
-/*** Testimonial ***/
+/*** Testimonials ***/
 .testimonial-carousel {
     max-width: 700px;
     margin: 0 auto;
@@ -307,7 +222,7 @@
     justify-content: center;
 }
 
-..testimonial-carousel .owl-dots .owl-dot {
+.testimonial-carousel .owl-dots .owl-dot {
     width: 50px;
     height: 50px;
     background: transparent;
@@ -320,11 +235,9 @@
     background: var(--bs-primary);
 }
 
-}
-
 .testimonial-carousel .owl-dots .owl-dot img {
-    opacity: .1;
-    transition: .5s;
+    opacity: 0.3;
+    transition: 0.5s;
     border-radius: 100px;
 }
 
@@ -332,28 +245,24 @@
     opacity: 1;
 }
 
-
-/*** Footer ***/
-/*** Footer with Video Background ***/
+/* Footer with Video Background */
 .footer {
     position: relative;
     overflow: hidden;
-    background: #0c0c0c;
+    background: #000;
 }
 
-/* Video layer */
-.footer video {
+/* Background video */
+.footer-video {
     position: absolute;
     top: 50%;
     left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    opacity: 0.25;
+    transform: translate(-50%, -50%);
     z-index: 1;
+    opacity: 0.35;
 }
 
 /* Dark overlay for readability */
@@ -361,7 +270,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.6);
     z-index: 2;
 }
 
@@ -371,17 +280,82 @@
     z-index: 3;
 }
 
-/* Footer text refinement */
+/* Footer text */
 .footer h1,
-.footer h5,
 .footer p,
 .footer a {
+    color: #fff;
+}
+/* ===================================
+   Hero / Carousel Optimization
+=================================== */
+
+#header-carousel .carousel-item {
+    min-height: 100vh;
+}
+
+#header-carousel .carousel-item img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    #header-carousel .carousel-item {
+        min-height: 85vh;
+    }
+
+    #header-carousel .carousel-item img {
+        height: 85vh;
+    }
+
+    .carousel-caption {
+        padding: 0 1.5rem;
+    }
+
+    .carousel-caption h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    .carousel-caption h5 {
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+    }
+
+    .carousel-caption p {
+        font-size: 0.95rem;
+    }
+}
+/* ===================================
+   Decorative Line for Hero h5
+=================================== */
+
+.carousel-caption h5 {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
     color: #ffffff;
+    font-weight: 300;
+    letter-spacing: 1px;
 }
 
-.footer a:hover {
-    color: var(--bs-primary);
-    text-decoration: none;
+/* Left & Right lines */
+.carousel-caption h5::before,
+.carousel-caption h5::after {
+    content: "";
+    width: 60px;
+    height: 1px;
+    background-color: #ffffff;
+    opacity: 0.8;
 }
 
+/* Mobile adjustment */
+@media (max-width: 768px) {
+    .carousel-caption h5::before,
+    .carousel-caption h5::after {
+        width: 35px;
+    }
 }
