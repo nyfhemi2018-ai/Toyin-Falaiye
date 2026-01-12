@@ -407,3 +407,6 @@
     background-color: #ffc107; /* your yellow */
     margin: 10px auto 0; /* space above + center align */
 }
+.footer { position: relative; overflow: hidden; }
+.footer video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.footer .container { position: relative; z-index: 1; }
