@@ -399,3 +399,11 @@
         background: url("../img/footer-fallback.jpg") center/cover no-repeat;
     }
 }
+/* Testimonial name underline */
+.testimonial-line {
+    display: block;
+    width: 60px;       /* length of the line */
+    height: 3px;       /* thickness */
+    background-color: #ffc107; /* your yellow */
+    margin: 10px auto 0; /* space above + center align */
+}
